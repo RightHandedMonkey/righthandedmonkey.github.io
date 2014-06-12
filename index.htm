@@ -1,0 +1,79 @@
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/-rmtbOmE-040/U5kCk6oU-4I/AAAAAAAADPk/yO9Aa7rqF5U/s1600/worx4us_header2_white.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-rmtbOmE-040/U5kCk6oU-4I/AAAAAAAADPk/yO9Aa7rqF5U/s1600/worx4us_header2_white.png" height="69" width="320" /></a></div>
+<h2>
+WorxForUs Android Framework (Database and Network helper tools)</h2>
+<br />
+This article is an introductory guide to the Android helper library by WorxForUs.&nbsp; The Android SDK has a lot of built in functionality, but there are certain things that it does not take care of for you.&nbsp; The API guides only get you so far.&nbsp; This framework is an attempt to pick up where the Android Samples leave off and address some of the trickier issues.&nbsp; Hopefully you will find features in this library to help your code become more robust.<br />
+<br />
+Major Features of the WorxForUs Android Library:<br />
+<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://4.bp.blogspot.com/-W3QtPOWMYWI/U5j34Q5in6I/AAAAAAAADPE/MB_zcGHZ8QI/s1600/Database-icon.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-W3QtPOWMYWI/U5j34Q5in6I/AAAAAAAADPE/MB_zcGHZ8QI/s1600/Database-icon.png" /></a></div>
+<ul>
+<li><a href="http://right-handed-monkey.blogspot.com/2014/03/android-database-example-and-tutorial.html" target="_blank">Database management (How To)</a></li>
+<ul>
+<li>Serialized access framework for writing thread safe (multi-threaded) applications</li>
+<li>Allows upgrade on a per table level instead of per database</li>
+<li>Supports methods to keep track of data synchronization to a remote server</li>
+</ul>
+</ul>
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-qkcO3OMaHwg/U5j393_DGJI/AAAAAAAADPQ/7TBJNeDg7m0/s1600/network_gnome_x.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-qkcO3OMaHwg/U5j393_DGJI/AAAAAAAADPQ/7TBJNeDg7m0/s1600/network_gnome_x.png" /></a></div>
+<ul><ul>
+</ul>
+<li><a href="http://right-handed-monkey.blogspot.com/2014/04/android-networking-example-and-tutorial.html" target="_blank">Network Tools (How To)</a></li>
+<ul>
+<li>Allows easy detection and handling of network errors</li>
+<li>Built in support for cookies</li>
+<li>Allows easy use of network retry mode (ie. will attempt 5 times before returning an error)</li>
+<li>Deals with authenticated and non-authenticated network requests&nbsp; </li>
+</ul>
+</ul>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-mcbPtCf0nrw/U5j4H3jxnLI/AAAAAAAADPU/WSLEiXtGhow/s1600/settings-128.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-mcbPtCf0nrw/U5j4H3jxnLI/AAAAAAAADPU/WSLEiXtGhow/s1600/settings-128.png" /></a></div>
+<br />
+<ul><ul>
+</ul>
+<li><a href="http://right-handed-monkey.blogspot.com/2014/04/obscured-shared-preferences-for-android.html">Obscuring Shared Preferences Data (How To)</a> - com.worxforus.ObscuredSharedPreferences</li>
+<ul>
+<li>Shared data is normally stored in plaintext.&nbsp; This tool easily encrypts your SharedPreferences data.</li>
+</ul>
+<li>Object Pools - com.worxforus.Pool&nbsp;</li>
+<ul>
+<li>Put objects into a pool to keep memory usage low and minimize object creation</li>
+</ul>
+</ul>
+<h4>
+&nbsp;</h4>
+<h4>
+Installation </h4>
+There are two ways to use the library.<br />
+1. Clone the source code at the github <a href="https://github.com/RightHandedMonkey/WorxForUs_Library">WorxForUs Library</a> and import into your IDE.&nbsp; Link the WorxForUs Library project to your project.<br />
+2. Download the <a href="https://github.com/RightHandedMonkey/WorxForUs_Library/blob/master/bin/worxforuslibrary.jar">jar file </a>from github and include in your project/lib files.<br />
+<br />
+If you are using the Network Tools, you may want to get the latest Apache HttpClient package from their download page <a href="http://hc.apache.org/downloads.cgi">here</a>.&nbsp; You will want the httpcore-4.x.x.jar, httpclient-4.x.x.jar, httpclient-cache-4.x.x.jar, and httpmime-4.x.x.jar.&nbsp; Import these into your referenced jar library.&nbsp; The latest binary release as of this writing is the <a href="http://psg.mtu.edu/pub/apache//httpcomponents/httpclient/binary/httpcomponents-client-4.3.3-bin.zip">4.3.3 package</a>.<br />
+<br />
+<h4>
+Why was this Framework created?&nbsp;</h4>
+<h4>
+</h4>
+Aside from the typical utilities one generally collects or creates when writing software for a long time, I had a few specific needs for robust database access and network handling.<br />
+<br />
+<h4>
+<a href="http://right-handed-monkey.blogspot.com/2014/03/android-database-example-and-tutorial.html" target="_blank">Database Management</a></h4>
+A typical example of using a SQLite database in Android shows that you extend the SQLiteOpenHelper.&nbsp; This is good, but what if you have several tables each with their own version?&nbsp; Also, the sample projects show doing a dbHelper.getWritableDatabase(), but do not say anything about how to handle multiple threads contending for the same resource.&nbsp; This may work fine on single core CPU devices, but suddenly your app may crash on a multi-Core Nexus 7 because your database access is not serialized. This package use a Singleton to provide access to the SQLite database and Semaphores to provide the locking which by default serializes the database access and prevents many common database exceptions from occurring.<br />
+<br />
+<h4>
+Network Tools</h4>
+I needed to handle cookies and detect when network connections were failing and identify what type of failure occurred.&nbsp; Was the problem a server failure or a bad connection on the user device?&nbsp; In a mobile network errors are the norm and it is important to handle them correctly.&nbsp; I also wanted a way to easily retry a connection several times until it was successful.&nbsp; This package is based on the Apache HttpClient because it easily supported the things I needed such as cookies and error detection.&nbsp; Future versions are planned to use the Velocity framework. <br />
+<br />
+<br />
+<span style="font-size: x-small;">*Additional Source of code, including but not limited to:</span><br />
+<span style="font-size: x-small;">The Android Open Source Project - for the Base64Support code.</span><br />
+<span style="font-size: x-small;">Obscuring Shared Preferences - much of the code for this came from help by emmby at <a href="http://stackoverflow.com/questions/785973/what-is-the-most-appropriate-way-to-store-user-settings-in-android-application/6393502#6393502">http://stackoverflow.com/questions/785973/what-is-the-most-appropriate-way-to-store-user-settings-in-android-application/6393502#6393502</a><br />&nbsp;</span>
