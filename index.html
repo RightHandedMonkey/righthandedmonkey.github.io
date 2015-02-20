@@ -42,7 +42,7 @@ Major Features of the WorxForUs Android Library:<br><br><br><div>
 <a href="http://4.bp.blogspot.com/-W3QtPOWMYWI/U5j34Q5in6I/AAAAAAAADPE/MB_zcGHZ8QI/s1600/Database-icon.png"><img border="0" src="http://4.bp.blogspot.com/-W3QtPOWMYWI/U5j34Q5in6I/AAAAAAAADPE/MB_zcGHZ8QI/s1600/Database-icon.png"></a>
 </div>
 <ul>
-<li><a href="http://right-handed-monkey.blogspot.com/2014/03/android-database-example-and-tutorial.html" target="_blank">Database management (How To)</a></li>
+<li><a href="http://righthandedmonkey.com/2014/03/android-database-example-and-tutorial.html" target="_blank">Database management (How To)</a></li>
 <ul>
 <li>Serialized access framework for writing thread safe (multi-threaded) applications</li>
 <li>Allows upgrade on a per table level instead of per database</li>
@@ -60,7 +60,7 @@ Major Features of the WorxForUs Android Library:<br><br><br><div>
 <ul>
 <ul></ul>
 <p></p>
-<li><a href="http://right-handed-monkey.blogspot.com/2014/04/android-networking-example-and-tutorial.html" target="_blank">Network Tools (How To)</a></li>
+<li><a href="http://righthandedmonkey.com/2014/04/android-networking-example-and-tutorial.html" target="_blank">Network Tools (How To)</a></li>
 
 <ul>
 <li>Allows easy detection and handling of network errors</li>
@@ -79,7 +79,7 @@ Major Features of the WorxForUs Android Library:<br><br><br><div>
 <ul></ul>
 <p></p>
 <li>
-<a href="http://right-handed-monkey.blogspot.com/2014/04/obscured-shared-preferences-for-android.html">Obscuring Shared Preferences Data (How To)</a> - com.worxforus.ObscuredSharedPreferences</li>
+<a href="http://righthandedmonkey.com/2014/04/obscured-shared-preferences-for-android.html">Obscuring Shared Preferences Data (How To)</a> - com.worxforus.ObscuredSharedPreferences</li>
 
 <ul>
 <li>Shared data is normally stored in plaintext.  This tool easily encrypts your SharedPreferences data.</li>
@@ -111,7 +111,7 @@ Why was this Framework created? </h4>
 
 <h4>
 <a name="database-management" class="anchor" href="#database-management"><span class="octicon octicon-link"></span></a>
-<a href="http://right-handed-monkey.blogspot.com/2014/03/android-database-example-and-tutorial.html" target="_blank">Database Management</a>
+<a href="http://righthandedmonkey.com/2014/03/android-database-example-and-tutorial.html" target="_blank">Database Management</a>
 </h4>
 
 <p>A typical example of using a SQLite database in Android shows that you extend the SQLiteOpenHelper.  This is good, but what if you have several tables each with their own version?  Also, the sample projects show doing a dbHelper.getWritableDatabase(), but do not say anything about how to handle multiple threads contending for the same resource.  This may work fine on single core CPU devices, but suddenly your app may crash on a multi-Core Nexus 7 because your database access is not serialized. This package use a Singleton to provide access to the SQLite database and Semaphores to provide the locking which by default serializes the database access and prevents many common database exceptions from occurring.<br><br></p>
